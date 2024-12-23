@@ -20,3 +20,11 @@ class Labyrinth:
         self.height = len(grid)
         self.width = len(grid[0])
         self.grid = [row[:] for row in grid]  # Deep copy of the grid
+        
+    # Permet de trouver les cellules de départ et de Sortie    
+    def _find_position(self, char: str) -> Cell:
+        for y in range(self.height):
+            for x in range(self.width):
+                if self.grid[y][x] == char:
+                    return Cell(x, y, char)
+        return None
