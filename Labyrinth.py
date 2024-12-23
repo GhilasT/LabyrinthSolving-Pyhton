@@ -13,3 +13,10 @@ class Cell:
         if not isinstance(other, Cell):
             return False
         return self.x == other.x and self.y == other.y
+
+
+class Labyrinth:
+    def __init__(self, grid: List[List[str]]):
+        self.height = len(grid)
+        self.width = len(grid[0])
+        self.grid = [row[:] for row in grid]  # Deep copy of the grid
